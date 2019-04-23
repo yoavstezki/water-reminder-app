@@ -1,8 +1,8 @@
-import { Button, Col, Container, Content, Footer, FooterTab, Row } from 'native-base';
+import {Button, Col, Container, Content, Footer, FooterTab, Row} from 'native-base';
 import React from 'react';
-import { StyleSheet, Text } from 'react-native';
-import { ButtonGroup, Input } from 'react-native-elements';
-import { Sex, Unit } from '../../../utils';
+import {StyleSheet, Text} from 'react-native';
+import {ButtonGroup, Input} from 'react-native-elements';
+import {Sex, Unit} from '../../../utils';
 
 interface RegistrationProps {
     setWeight: (weight: string) => void,
@@ -18,14 +18,19 @@ const buttons = [Sex.male, Sex.female];
 
 const RegistrationComponent = ({
                                    weight, unit, sex, dailyGoal, setWeight, setUnit, setSex,
-                                   setDailyGoal, setCreated, computeDailyGoal
+                                   setDailyGoal, setCreated, computeDailyGoal, navigation
                                }: any) => {
 
     const computedDailyGoal = computeDailyGoal();
 
+    const onSave = () => {
+        setCreated();
+        navigation.navigate('App');
+    };
+
     return (
         <Container>
-            <Row style={{ height: '10%' }}>
+            <Row style={{height: '10%'}}>
                 <Col>
                     <Text style={style.title}>How much water to drink?</Text>
                     <Text style={style.subTitle}>Enter your weight and sex to find out</Text>
@@ -35,13 +40,13 @@ const RegistrationComponent = ({
             <Content>
 
                 <Row style={style.row}>
-                    <Input containerStyle={{ width: 80 }}
-                           inputStyle={{ textAlign: 'center' }}
+                    <Input containerStyle={{width: 80}}
+                           inputStyle={{textAlign: 'center'}}
                            defaultValue={`${weight}`}
                            placeholder={'Weight'}
                            maxLength={WEIGHT_MAX_LENGTH}
                            keyboardType='numeric'
-                           onChangeText={setWeight} />
+                           onChangeText={setWeight}/>
 
                     <Button bordered info onPress={() => setUnit(unit)}
                             style={style.button}>
@@ -54,19 +59,19 @@ const RegistrationComponent = ({
                         onPress={() => setSex(sex)}
                         selectedIndex={buttons.indexOf(sex)}
                         buttons={buttons}
-                        containerStyle={{ height: 40, width: 150 }}
+                        containerStyle={{height: 40, width: 150}}
                     />
                 </Row>
 
                 <Row style={style.row}>
-                    <Input containerStyle={{ width: 200 }}
-                           inputStyle={{ fontSize: 30, textAlign: 'center' }}
+                    <Input containerStyle={{width: 200}}
+                           inputStyle={{fontSize: 30, textAlign: 'center'}}
                            keyboardType='numeric'
                            defaultValue={`${dailyGoal}`}
                            maxLength={DAILY_GOAL_MAX_LENGTH}
                            onChangeText={setDailyGoal}
                     />
-                    <Text style={{ ...style.label, color: '#2d89ef' }}> {unit === Unit.kg_ml ? 'ml' : 'oz'}</Text>
+                    <Text style={{...style.label, color: '#2d89ef'}}> {unit === Unit.kg_ml ? 'ml' : 'oz'}</Text>
                 </Row>
 
                 <Row style={style.row}>
@@ -79,8 +84,8 @@ const RegistrationComponent = ({
 
             <Footer>
                 <FooterTab>
-                    <Button full style={style.button} onPress={setCreated}>
-                        <Text>Next</Text>
+                    <Button full style={style.button} onPress={onSave}>
+                        <Text>Finish</Text>
                     </Button>
                 </FooterTab>
             </Footer>

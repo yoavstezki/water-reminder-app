@@ -1,4 +1,4 @@
-import { SET_CREATED } from '../constants/action-types';
+import { SET_CREATED } from '../../constants/action-types';
 
 export const setCreated = () => (
     {

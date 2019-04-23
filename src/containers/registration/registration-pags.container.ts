@@ -1,8 +1,11 @@
-import { connect } from 'react-redux';
-import { Dispatch } from 'redux';
-import { setCreated, setDailyGoal, setSex, setUnit, setWeight, sexPage } from '../../actions';
-import { computeDailyGoalSelector, registrationSelector } from '../../reducers/registration-reducer';
+import {connect} from 'react-redux';
+import {Dispatch} from 'redux';
+import {setDailyGoal, setSex, setUnit, setWeight, sexPage} from './store/actions';
+import {setCreated} from "../../store/app/sexCreated.action";
+import {computeDailyGoalSelector, registrationSelector} from './store/reducers/registration-reducer';
 import RegistrationPagesComponent from './components/registration-pages.component';
+import {compose} from 'recompose';
+import {withNamespaces} from 'react-i18next';
 
 
 const mapStateToProps = (state: any) => {
@@ -21,7 +24,7 @@ const mapDispatchToProps = (dispatch: Dispatch) => ({
     setCreated: () => dispatch(setCreated())
 });
 
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(RegistrationPagesComponent)
+export default compose(
+    withNamespaces(),
+    connect(mapStateToProps, mapDispatchToProps)
+)(RegistrationPagesComponent);

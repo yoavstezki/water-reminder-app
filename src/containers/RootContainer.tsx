@@ -1,39 +1,32 @@
-import React, { Component } from 'react';
-import { SafeAreaView, StyleSheet, View } from 'react-native';
-import { store } from '../store';
-import RegistrationPagesContainer from './welcome/registration-pags.container'
+import React, {Component} from 'react';
+import {connect} from "react-redux";
+import {appSelector} from "../store/app/app.reducer";
+import {Spinner} from "native-base";
+import {store} from '../store';
 
 
-class RootContainer extends Component {
+class RootContainer extends Component<any> {
 
-    render(): React.ReactNode {
+    componentDidMount(): void {
 
-        const { created }: any = store.getState();
+        const {app: {created}} = store.getState();
+        const {navigation} = this.props;
 
-        return (
-            <SafeAreaView style={style.safeArea}>
-                <View style={style.applicationView}>
+        navigation.navigate(created ? 'App' : 'Auth')
+    }
 
-                    {created ? (<View>
-                        bla bla bla
-                    </View>) : <RegistrationPagesContainer />}
+    render() {
 
+        console.log('222', this.props);
 
-                </View>
-            </SafeAreaView>
-        )
+        return <Spinner color='blue'/>
     }
 }
 
-const style = StyleSheet.create({
-    safeArea: {
-        flex: 1,
-        backgroundColor: 'transparent'
-    },
-    applicationView: {
-        flex: 1
-    },
-});
+const mapStateToProps = (state: any) => {
+    return {
+        ...appSelector(state)
+    }
+};
 
-
-export default RootContainer
+export default connect(mapStateToProps)(RootContainer)
