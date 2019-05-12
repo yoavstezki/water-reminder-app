@@ -29,7 +29,7 @@ const RegistrationComponent = ({
     };
 
     return (
-        <Container>
+        <Container style={{flex: 1}}>
             <Row style={{height: '10%'}}>
                 <Col>
                     <Text style={style.title}>How much water to drink?</Text>
@@ -84,7 +84,7 @@ const RegistrationComponent = ({
 
             <Footer>
                 <FooterTab>
-                    <Button full style={style.button} onPress={onSave}>
+                    <Button full style={{...style.button, backgroundColor: '#2d89ef'}} onPress={onSave}>
                         <Text>Finish</Text>
                     </Button>
                 </FooterTab>

@@ -9,12 +9,13 @@ import RegistrationComponent from './registration.component';
 
 const RegistrationPagesComponent = (props: any) => {
 
+
     return (
         <View style={{flex: 1, backgroundColor: '#263238'}}>
             <Pages indicatorPosition='bottom' indicatorColor='#FF9100' indicatorOpacity={0.54}>
                 <Container style={{flex: 1}}>
                     <Row style={{backgroundColor: 'blue'}}>
-                        <Text>{props.t('Welcome to React')}</Text>
+                        <Text>{props.t('test.bla')}</Text>
                     </Row>
                     <Row style={{backgroundColor: 'red'}}>
                         <Text>Row 2</Text>

@@ -16,9 +16,6 @@ class RootContainer extends Component<any> {
     }
 
     render() {
-
-        console.log('222', this.props);
-
         return <Spinner color='blue'/>
     }
 }

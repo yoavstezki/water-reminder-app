@@ -6,13 +6,10 @@ const initialState = {
 
 export const appSelector = (state: any) => ({...state.root});
 
+
 const appReducer = (state = initialState, action: any) => {
     switch (action.type) {
-
         case SET_CREATED: {
-
-            console.log('state', state);
-
             return {
                 ...state,
                 created: true
