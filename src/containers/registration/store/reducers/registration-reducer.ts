@@ -23,34 +23,27 @@ export const computeDailyGoalSelector = () => createSelector(
 );
 
 const registrationReducer: any = (state = initialState, action: any) => {
+
     switch (action.type) {
         case SET_UNIT: {
             const {unit} = action.payload;
+            let weight;
 
             if (unit === Unit.kg_ml) {
-
-                const weight = kgToLb(state.weight);
-
-                const dailyGoal = getComputeDailyGoal({...state, unit: Unit.lb_oz, weight} as FormulaDailyGoal);
-
-                return {...state, unit: Unit.lb_oz, weight, dailyGoal};
+                weight = kgToLb(state.weight);
+            } else {
+                weight = lbToKg(state.weight);
             }
 
-            const weight = lbToKg(state.weight);
-            const dailyGoal = getComputeDailyGoal({...state, unit: Unit.kg_ml, weight} as FormulaDailyGoal);
+            const dailyGoal = getComputeDailyGoal({...state, unit, weight} as FormulaDailyGoal);
 
-            return {...state, unit: Unit.kg_ml, weight, dailyGoal};
+            return {...state, unit, weight, dailyGoal};
         }
         case SET_SEX: {
             const {sex} = action.payload;
 
-            if (sex === Sex.male) {
-                const dailyGoal = getComputeDailyGoal({...state, sex: Sex.female} as FormulaDailyGoal);
-                return {...state, sex: Sex.female, dailyGoal};
-            }
-
-            const dailyGoal = getComputeDailyGoal({...state, sex: Sex.male} as FormulaDailyGoal);
-            return {...state, sex: Sex.male, dailyGoal};
+            const dailyGoal = getComputeDailyGoal({...state, sex} as FormulaDailyGoal);
+            return {...state, sex, dailyGoal};
         }
         case SET_WEIGHT: {
 

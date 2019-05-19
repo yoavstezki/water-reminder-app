@@ -18,12 +18,28 @@ const resources = {
         translation: {
             "settings": {
                 "selection_one": {
-                    "header": "General Settings"
+                    "header": "General Settings",
+                    "languages": "Languages",
+                    "sex": "Sex",
+                    "units": "Units",
+                },
+                "sex": {
+                    "male": "male",
+                    "female": "female"
+                },
+                "units": {
+                    "kg/ml": "kg/ml",
+                    "lb/oz": "lb/oz"
                 }
             },
             "languages": {
                 "EN": "English",
-                "IL": "Hebrew"
+                "IL": "עברית"
+            },
+            "picker": {
+                "languages": {
+                    "title": "Select languages"
+                }
             }
         }
     },
@@ -31,11 +47,22 @@ const resources = {
         translation: {
             "settings": {
                 "selection_one": {
-                    "header": "הגדרות כלליות"
+                    "header": "הגדרות כלליות",
+                    "languages": "שפות",
+                    "sex": "מין"
+                },
+                "sex": {
+                    "male": "זכר",
+                    "female": "נקבה"
+                }
+            },
+            "picker": {
+                "languages": {
+                    "title": "בחר שפה"
                 }
             },
             "languages": {
-                "EN": "אנגלית",
+                "EN": "English",
                 "IL": "עברית"
             }
         }

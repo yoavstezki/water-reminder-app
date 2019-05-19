@@ -16,10 +16,9 @@ const DAILY_GOAL_MAX_LENGTH = 4;
 
 const buttons = [Sex.male, Sex.female];
 
-const RegistrationComponent = ({
-                                   weight, unit, sex, dailyGoal, setWeight, setUnit, setSex,
-                                   setDailyGoal, setCreated, computeDailyGoal, navigation
-                               }: any) => {
+const getOtherUnit = (unit: Unit) => Unit.kg_ml === unit ? Unit.lb_oz: Unit.kg_ml;
+
+const RegistrationComponent = ({weight, unit, sex, dailyGoal, setWeight, setUnit, setSex, setDailyGoal, setCreated, computeDailyGoal, navigation}: any) => {
 
     const computedDailyGoal = computeDailyGoal();
 
@@ -48,7 +47,7 @@ const RegistrationComponent = ({
                            keyboardType='numeric'
                            onChangeText={setWeight}/>
 
-                    <Button bordered info onPress={() => setUnit(unit)}
+                    <Button bordered info onPress={() => setUnit(getOtherUnit(unit))}
                             style={style.button}>
                         <Text style={style.textButton}>{unit}</Text>
                     </Button>
@@ -56,7 +55,7 @@ const RegistrationComponent = ({
 
                 <Row style={style.row}>
                     <ButtonGroup
-                        onPress={() => setSex(sex)}
+                        onPress={(i) => setSex(buttons[i])}
                         selectedIndex={buttons.indexOf(sex)}
                         buttons={buttons}
                         containerStyle={{height: 40, width: 150}}

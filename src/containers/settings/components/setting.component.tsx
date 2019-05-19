@@ -1,8 +1,8 @@
 import React from 'react';
-import {
-    Body, Button, Col, Container, Content, Grid, Header, Icon, Left, ListItem, Right, Row, Separator, Text, Title
-} from "native-base";
-import {LanguagePiker} from "../../../components/language.component";
+import {Col, Container, Grid, Left, ListItem, Right, Row, Text} from "native-base";
+import LanguagePiker from "../../../components/language-picker.component";
+import SexPicker from "../../../components/sex-picker.component";
+import UnitsPicker from "../../../components/units-picker.component";
 
 const styles = {
     container: {
@@ -14,38 +14,97 @@ const styles = {
     },
     mb: {
         marginBottom: 15
+    },
+    containerRow: {
+        flex: 1, height: 50
     }
 };
 
-
-const rendererLanguagePiker = (props: any) => (
-    <LanguagePiker selected={props.lng} setLanguages={props.setLanguages} {...props}/>
-);
-
-
 const SettingComponent = (props: any) => {
+    const {
+        i18n,
+        setLanguages,
+        setSex,
+        setUnit,
+        setSexPickerVisible,
+        setLanguagePickerVisible,
+        setUnitsPickerVisible,
+        settings: {sexPickerVisible, languagePickerVisible, unitsPickerVisible, lng},
+        registration: {sex, unit}
 
-    console.log('PROPS', props);
-
-    const {i18n, lng, setLanguages} = props;
+    } = props;
 
     return (
         <Container style={styles.container}>
-            <Content>
-                <ListItem itemDivider>
-                    <Text>{i18n.t('settings.selection_one.header')}</Text>
-                </ListItem>
+            <ListItem itemDivider>
+                <Text>{i18n.t('settings.selection_one.header')}</Text>
+            </ListItem>
 
-                <ListItem>
-                    <Left>
+            <ListItem onPress={() => setLanguagePickerVisible(true)}>
+                <Left>
+                    <Container style={styles.containerRow}>
+                        <Grid>
+                            <Row>
+                                <Col>
+                                    <Text>{i18n.t('settings.selection_one.languages')}</Text>
+                                </Col>
+                            </Row>
+                            <Row>
+                                <Col>
+                                    <Text>{i18n.t(`languages.${lng}`)}</Text>
+                                </Col>
+                            </Row>
+                        </Grid>
+                    </Container>
+                </Left>
+                <LanguagePiker
+                    language={lng}
+                    setVisible={setLanguagePickerVisible}
+                    visible={languagePickerVisible}
+                    onSelect={setLanguages}/>
+                <Right/>
+            </ListItem>
 
-                    </Left>
-                    <Body>
-                        <LanguagePiker selected={lng} setLanguages={setLanguages} {...props}/>
-                    </Body>
-                    <Right/>
-                </ListItem>
-            </Content>
+            <ListItem onPress={() => setSexPickerVisible(true)}>
+                <Left>
+                    <Container style={styles.containerRow}>
+                        <Grid>
+                            <Row>
+                                <Col>
+                                    <Text>{i18n.t('settings.selection_one.sex')}</Text>
+                                </Col>
+                            </Row>
+                            <Row>
+                                <Col>
+                                    <Text>{i18n.t(`settings.sex.${sex}`)}</Text>
+                                </Col>
+                            </Row>
+                        </Grid>
+                    </Container>
+                </Left>
+                <SexPicker sex={sex} onSelect={setSex} setVisible={setSexPickerVisible} visible={sexPickerVisible}/>
+            </ListItem>
+
+            <ListItem onPress={() => setUnitsPickerVisible(true)}>
+                <Left>
+                    <Container style={styles.containerRow}>
+                        <Grid>
+                            <Row>
+                                <Col>
+                                    <Text>{i18n.t('settings.selection_one.units')}</Text>
+                                </Col>
+                            </Row>
+                            <Row>
+                                <Col>
+                                    <Text>{i18n.t(`settings.units.${unit}`)}</Text>
+                                </Col>
+                            </Row>
+                        </Grid>
+                    </Container>
+                </Left>
+                    <UnitsPicker unit={unit} onSelect={setUnit} setVisible={setUnitsPickerVisible} visible={unitsPickerVisible}/>
+            </ListItem>
+
         </Container>
     )
 };

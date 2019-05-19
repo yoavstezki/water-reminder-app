@@ -2,6 +2,7 @@ import React from 'react';
 import {Container} from "native-base";
 import {Text} from 'react-native';
 
+
 const HomeComponent = (props: any) => {
 
     return (
