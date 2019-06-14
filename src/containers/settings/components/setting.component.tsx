@@ -3,6 +3,8 @@ import {Col, Container, Grid, Left, ListItem, Right, Row, Text} from "native-bas
 import LanguagePiker from "../../../components/language-picker.component";
 import SexPicker from "../../../components/sex-picker.component";
 import UnitsPicker from "../../../components/units-picker.component";
+import WeightPicker from "../../../components/weight-picker.component";
+import {setWeightPickerVisible} from "../../../store/ui/actions/set-weight.action";
 
 const styles = {
     container: {
@@ -29,9 +31,9 @@ const SettingComponent = (props: any) => {
         setSexPickerVisible,
         setLanguagePickerVisible,
         setUnitsPickerVisible,
+        setWeightPickerVisible,
         settings: {sexPickerVisible, languagePickerVisible, unitsPickerVisible, lng},
-        registration: {sex, unit}
-
+        registration: {sex, unit, weight}
     } = props;
 
     return (
@@ -103,6 +105,26 @@ const SettingComponent = (props: any) => {
                     </Container>
                 </Left>
                     <UnitsPicker unit={unit} onSelect={setUnit} setVisible={setUnitsPickerVisible} visible={unitsPickerVisible}/>
+            </ListItem>
+
+            <ListItem onPress={() => setWeightPickerVisible(true)}>
+                <Left>
+                    <Container style={styles.containerRow}>
+                        <Grid>
+                            <Row>
+                                <Col>
+                                    <Text>{i18n.t('settings.selection_one.weight')}</Text>
+                                </Col>
+                            </Row>
+                            <Row>
+                                <Col>
+                                    <Text>{weight}</Text>
+                                </Col>
+                            </Row>
+                        </Grid>
+                    </Container>
+                </Left>
+                <WeightPicker />
             </ListItem>
 
         </Container>

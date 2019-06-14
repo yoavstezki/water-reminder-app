@@ -1,5 +1,5 @@
 Arguments: 
-  /Users/yoavs/.nvm/versions/node/v8.15.1/bin/node /usr/local/Cellar/yarn/1.15.2/libexec/bin/yarn.js add react-native-material-dialog
+  /Users/yoavs/.nvm/versions/node/v8.15.1/bin/node /usr/local/Cellar/yarn/1.15.2/libexec/bin/yarn.js add -D @types/react-native-wheel-picker-android
 
 PATH: 
   /Users/yoavs/google-cloud-sdk/bin:/Users/yoavs/.nvm/versions/node/v8.15.1/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/yoavs/lab/water-reminder-app/node_modules/.bin
@@ -14,11 +14,17 @@ Platform:
   darwin x64
 
 Trace: 
-  Error: http://10.128.0.20:8081/repository/panorays-npm-all-dev/react-native-material-dialog: ETIMEDOUT
-      at Timeout._onTimeout (/usr/local/Cellar/yarn/1.15.2/libexec/lib/cli.js:130201:19)
-      at ontimeout (timers.js:498:11)
-      at tryOnTimeout (timers.js:323:5)
-      at Timer.listOnTimeout (timers.js:290:5)
+  Error: http://10.128.0.20:8081/repository/panorays-npm-all-dev/@types%2freact-native-wheel-picker-android: Not found
+      at Request.params.callback [as _callback] (/usr/local/Cellar/yarn/1.15.2/libexec/lib/cli.js:66058:18)
+      at Request.self.callback (/usr/local/Cellar/yarn/1.15.2/libexec/lib/cli.js:129541:22)
+      at emitTwo (events.js:126:13)
+      at Request.emit (events.js:214:7)
+      at Request.<anonymous> (/usr/local/Cellar/yarn/1.15.2/libexec/lib/cli.js:130513:10)
+      at emitOne (events.js:116:13)
+      at Request.emit (events.js:211:7)
+      at IncomingMessage.<anonymous> (/usr/local/Cellar/yarn/1.15.2/libexec/lib/cli.js:130435:12)
+      at Object.onceWrapper (events.js:313:30)
+      at emitNone (events.js:111:20)
 
 npm manifest: 
   {
@@ -38,9 +44,12 @@ npm manifest:
       "react-i18next": "^9.0.10",
       "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz",
       "react-native-elements": "^1.1.0",
+      "react-native-material-dialog": "^0.7.6",
       "react-native-material-textfield": "^0.12.0",
       "react-native-material-ui": "^1.30.1",
       "react-native-pages": "^0.7.0",
+      "react-native-slider": "^0.11.0",
+      "react-native-wheel-picker-android": "^2.0.5",
       "react-navigation": "^3.8.1",
       "react-redux": "^6.0.1",
       "recompose": "^0.30.0",
@@ -3635,6 +3644,11 @@ Lockfile:
     dependencies:
       moment ">= 2.9.0"
   
+  moment@2.22.0:
+    version "2.22.0"
+    resolved "http://10.128.0.20:8081/repository/panorays-npm-all-dev/moment/-/moment-2.22.0.tgz#7921ade01017dd45186e7fee5f424f0b8663a730"
+    integrity sha512-1muXCh8jb1N/gHRbn9VDUBr0GYb8A/aVcHlII9QSB68a50spqEVLIGN6KVmCOnSvJrUhC0edGgKU5ofnGXdYdg==
+  
   "moment@>= 2.9.0", moment@^2.22.2:
     version "2.24.0"
     resolved "https://registry.yarnpkg.com/moment/-/moment-2.24.0.tgz#0d055d53f5052aa653c9f6eb68bb5d12bf5c2b5b"
@@ -4125,7 +4139,7 @@ Lockfile:
     dependencies:
       asap "~2.0.3"
   
-  prop-types@^15.5.10, prop-types@^15.5.8, prop-types@^15.5.9, prop-types@^15.6.0, prop-types@^15.6.1, prop-types@^15.6.2, prop-types@^15.7.2:
+  prop-types@^15.5.10, prop-types@^15.5.6, prop-types@^15.5.8, prop-types@^15.5.9, prop-types@^15.6.0, prop-types@^15.6.1, prop-types@^15.6.2, prop-types@^15.7.2:
     version "15.7.2"
     resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.7.2.tgz#52c41e75b8c87e72b9d9360e0206b99dcbffa6c5"
     dependencies:
@@ -4275,6 +4289,15 @@ Lockfile:
     version "0.2.7"
     resolved "https://registry.yarnpkg.com/react-native-material-design-styles/-/react-native-material-design-styles-0.2.7.tgz#428560ef4d0659db1163c9f9b5476d886ed22d57"
   
+  react-native-material-dialog@^0.7.6:
+    version "0.7.6"
+    resolved "http://10.128.0.20:8081/repository/panorays-npm-all-dev/react-native-material-dialog/-/react-native-material-dialog-0.7.6.tgz#1cf0a454bad045987f8d3980f38fdd36b502d55f"
+    integrity sha512-K5lExew1rl6orpuDaXGV92aVXTahdWTv6RsD5OEuMf3h3iH7Sxgocb3tbRdqqZlw2cVrPl7DemwyT/lZS9jOHg==
+    dependencies:
+      prop-types "^15.5.10"
+      react-native-typography "^1.0.3"
+      react-native-vector-icons "^4.2.0"
+  
   react-native-material-textfield@^0.12.0:
     version "0.12.0"
     resolved "https://registry.yarnpkg.com/react-native-material-textfield/-/react-native-material-textfield-0.12.0.tgz#3fba19d76ab89f67052c81e082152fc243d82a3f"
@@ -4325,6 +4348,13 @@ Lockfile:
     version "1.0.0-alpha.22"
     resolved "https://registry.yarnpkg.com/react-native-screens/-/react-native-screens-1.0.0-alpha.22.tgz#7a120377b52aa9bbb94d0b8541a014026be9289b"
   
+  react-native-slider@^0.11.0:
+    version "0.11.0"
+    resolved "http://10.128.0.20:8081/repository/panorays-npm-all-dev/react-native-slider/-/react-native-slider-0.11.0.tgz#b68a0bc43c8422b24cd57947cc5ac2bcdb58fadc"
+    integrity sha512-jV9K87eu9uWr0uJIyrSpBLnCKvVlOySC2wynq9TFCdV9oGgjt7Niq8Q1A8R8v+5GHsuBw/s8vEj1AAkkUi+u+w==
+    dependencies:
+      prop-types "^15.5.6"
+  
   react-native-status-bar-height@^2.2.0:
     version "2.2.0"
     resolved "https://registry.yarnpkg.com/react-native-status-bar-height/-/react-native-status-bar-height-2.2.0.tgz#3bd51de134660efc5f5ad136ca573c7d5790f7ed"
@@ -4355,6 +4385,11 @@ Lockfile:
       semver "^5.4.1"
       source-map "^0.5.6"
   
+  react-native-typography@^1.0.3:
+    version "1.4.0"
+    resolved "http://10.128.0.20:8081/repository/panorays-npm-all-dev/react-native-typography/-/react-native-typography-1.4.0.tgz#166b79c618075882d8af07720649f5bc6523160d"
+    integrity sha512-3lToN3hRvPySw0PWCn1SjbDbNaqlV+FM22zSuymIc2ILGcfWbWcgZ+qdX+VKtHAewMG7Rp5yab2bmuaEYQlu3Q==
+  
   react-native-vector-icons@6.0.0:
     version "6.0.0"
     resolved "https://registry.yarnpkg.com/react-native-vector-icons/-/react-native-vector-icons-6.0.0.tgz#3a7076dbe244ea94c6d5e92802a870e64a4283c5"
@@ -4371,9 +4406,25 @@ Lockfile:
       prop-types "^15.6.2"
       yargs "^8.0.2"
   
+  react-native-vector-icons@^4.2.0:
+    version "4.6.0"
+    resolved "http://10.128.0.20:8081/repository/panorays-npm-all-dev/react-native-vector-icons/-/react-native-vector-icons-4.6.0.tgz#e4014311ffa6de397d914ffc31b7097a874cc8d5"
+    integrity sha512-rpfhfPiXCK2PX1nrNhdxSMrEGB/Gw/SvKoPM0G2wAkSoqynnes19K0VYI+Up7DqR1rFIpE4hP2erpT1tNx2tfg==
+    dependencies:
+      lodash "^4.0.0"
+      prop-types "^15.5.10"
+      yargs "^8.0.2"
+  
   react-native-view-shot@2.5.0:
     version "2.5.0"
     resolved "https://registry.yarnpkg.com/react-native-view-shot/-/react-native-view-shot-2.5.0.tgz#428a997f470d3148d0067c5b46abd988ef1aa4c0"
+  
+  react-native-wheel-picker-android@^2.0.5:
+    version "2.0.5"
+    resolved "http://10.128.0.20:8081/repository/panorays-npm-all-dev/react-native-wheel-picker-android/-/react-native-wheel-picker-android-2.0.5.tgz#ab1881640c7c4b64b878e519ea5fe82fbb9bde99"
+    integrity sha512-ee8MLSvFoi0uoy0QEPYSlmpwLYSJ4tBmdXARyj+EAevGB+m4CFqOfD6Ptsl+JtGkoNbXZMIZsdmQASfH8g0/gw==
+    dependencies:
+      moment "2.22.0"
   
   "react-native@https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz":
     version "0.57.1"

@@ -3560,6 +3560,11 @@ moment-timezone@^0.5.23:
   dependencies:
     moment ">= 2.9.0"
 
+moment@2.22.0:
+  version "2.22.0"
+  resolved "http://10.128.0.20:8081/repository/panorays-npm-all-dev/moment/-/moment-2.22.0.tgz#7921ade01017dd45186e7fee5f424f0b8663a730"
+  integrity sha512-1muXCh8jb1N/gHRbn9VDUBr0GYb8A/aVcHlII9QSB68a50spqEVLIGN6KVmCOnSvJrUhC0edGgKU5ofnGXdYdg==
+
 "moment@>= 2.9.0", moment@^2.22.2:
   version "2.24.0"
   resolved "https://registry.yarnpkg.com/moment/-/moment-2.24.0.tgz#0d055d53f5052aa653c9f6eb68bb5d12bf5c2b5b"
@@ -4050,7 +4055,7 @@ promise@^7.1.1:
   dependencies:
     asap "~2.0.3"
 
-prop-types@^15.5.10, prop-types@^15.5.8, prop-types@^15.5.9, prop-types@^15.6.0, prop-types@^15.6.1, prop-types@^15.6.2, prop-types@^15.7.2:
+prop-types@^15.5.10, prop-types@^15.5.6, prop-types@^15.5.8, prop-types@^15.5.9, prop-types@^15.6.0, prop-types@^15.6.1, prop-types@^15.6.2, prop-types@^15.7.2:
   version "15.7.2"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.7.2.tgz#52c41e75b8c87e72b9d9360e0206b99dcbffa6c5"
   dependencies:
@@ -4259,6 +4264,13 @@ react-native-screens@1.0.0-alpha.22, "react-native-screens@^1.0.0 || ^1.0.0-alph
   version "1.0.0-alpha.22"
   resolved "https://registry.yarnpkg.com/react-native-screens/-/react-native-screens-1.0.0-alpha.22.tgz#7a120377b52aa9bbb94d0b8541a014026be9289b"
 
+react-native-slider@^0.11.0:
+  version "0.11.0"
+  resolved "http://10.128.0.20:8081/repository/panorays-npm-all-dev/react-native-slider/-/react-native-slider-0.11.0.tgz#b68a0bc43c8422b24cd57947cc5ac2bcdb58fadc"
+  integrity sha512-jV9K87eu9uWr0uJIyrSpBLnCKvVlOySC2wynq9TFCdV9oGgjt7Niq8Q1A8R8v+5GHsuBw/s8vEj1AAkkUi+u+w==
+  dependencies:
+    prop-types "^15.5.6"
+
 react-native-status-bar-height@^2.2.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/react-native-status-bar-height/-/react-native-status-bar-height-2.2.0.tgz#3bd51de134660efc5f5ad136ca573c7d5790f7ed"
@@ -4322,6 +4334,13 @@ react-native-vector-icons@^4.2.0:
 react-native-view-shot@2.5.0:
   version "2.5.0"
   resolved "https://registry.yarnpkg.com/react-native-view-shot/-/react-native-view-shot-2.5.0.tgz#428a997f470d3148d0067c5b46abd988ef1aa4c0"
+
+react-native-wheel-picker-android@^2.0.5:
+  version "2.0.5"
+  resolved "http://10.128.0.20:8081/repository/panorays-npm-all-dev/react-native-wheel-picker-android/-/react-native-wheel-picker-android-2.0.5.tgz#ab1881640c7c4b64b878e519ea5fe82fbb9bde99"
+  integrity sha512-ee8MLSvFoi0uoy0QEPYSlmpwLYSJ4tBmdXARyj+EAevGB+m4CFqOfD6Ptsl+JtGkoNbXZMIZsdmQASfH8g0/gw==
+  dependencies:
+    moment "2.22.0"
 
 "react-native@https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz":
   version "0.57.1"

@@ -17,7 +17,7 @@ export const getWeight = (state: any) => state.registration.weight;
 export const getSex = (state: any) => state.registration.sex;
 export const getPage = (state: any) => state.registration.page;
 
-export const computeDailyGoalSelector = () => createSelector(
+export const computeDailyGoalSelector = createSelector(
     [getUnit, getWeight, getSex],
     (unit, weight, sex) => getComputeDailyGoal({unit, weight, sex})
 );

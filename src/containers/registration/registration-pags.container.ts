@@ -11,7 +11,7 @@ import {withNamespaces} from 'react-i18next';
 const mapStateToProps = (state: any) => {
     return {
         ...registrationSelector(state),
-        computeDailyGoal: () => computeDailyGoalSelector()(state),
+        computeDailyGoal: () => computeDailyGoalSelector(state),
     }
 };
 

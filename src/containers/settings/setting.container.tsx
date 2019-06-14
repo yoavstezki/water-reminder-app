@@ -8,6 +8,7 @@ import {Languages} from "../../i18n/languages.enum";
 import {Sex, Unit} from "../../utils";
 import {setSex, setUnit} from "../registration/store/actions";
 import {setUnitsPickerVisible} from "./store/actions/setUnitsPickerVisible.action";
+import {setWeightPickerVisible} from "../../store/ui/actions/set-weight.action";
 
 const mapStateToProps = (state: any) => {
     return {
@@ -22,6 +23,7 @@ const mapDispatchToProps = (dispatch: Dispatch) => ({
     setSex: (sex: Sex) => dispatch(setSex(sex)),
     setUnitsPickerVisible: (visible: boolean) => dispatch(setUnitsPickerVisible(visible)),
     setUnit: (unit: Unit) => dispatch(setUnit(unit)),
+    setWeightPickerVisible: (visible: boolean) => dispatch(setWeightPickerVisible(visible)),
 
 });
 

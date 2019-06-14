@@ -22,6 +22,7 @@ const resources = {
                     "languages": "Languages",
                     "sex": "Sex",
                     "units": "Units",
+                    "weight": "Weight"
                 },
                 "sex": {
                     "male": "male",
@@ -39,6 +40,9 @@ const resources = {
             "picker": {
                 "languages": {
                     "title": "Select languages"
+                },
+                "weight": {
+                    "title": "Select weight"
                 }
             }
         }
