@@ -1,9 +1,9 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 import {compose} from 'recompose';
 import {withNamespaces} from 'react-i18next';
 import {connect} from 'react-redux';
-import {getUnit, getWeight} from '../containers/registration/store/reducers/registration-reducer';
+import {getWeight} from '../containers/registration/store/reducers/registration-reducer';
 import {getWeightPickerVisible, getWeightRange} from '../store/ui/ui.reducer';
 import {setWeight} from '../containers/registration/store/actions';
 import {setWeightPickerVisible} from "../store/ui/actions/set-weight.action";
@@ -13,21 +13,24 @@ import {MaterialDialog} from "react-native-material-dialog";
 
 const WeightPicker = ({weight, weightRange, visible, setWeight, setVisible, t}: any) => {
 
+    const [value, setValue] = useState(weight);
+
     const onOk = () => {
-        setVisible(false)
-        setWeight(0);
+        setVisible(false);
+        setWeight(value);
     };
 
     return (
         <MaterialDialog
             title={t('picker.weight.title')}
             visible={visible}
-            onOk={() => onOk}
+            onOk={onOk}
             onCancel={() => setVisible(false)}>
             <WheelPicker
                 style={{padding: 10}}
-                selectedItem={`${weight}`}
-                data={weightRange}/>
+                selectedItem={`${value}`}
+                data={weightRange}
+                onItemSelected={setValue}/>
         </MaterialDialog>
     )
 };

@@ -4119,9 +4119,10 @@ react-deep-force-update@^1.0.0:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/react-deep-force-update/-/react-deep-force-update-1.1.2.tgz#3d2ae45c2c9040cbb1772be52f8ea1ade6ca2ee1"
 
-react-devtools-core@3.3.4:
-  version "3.3.4"
-  resolved "https://registry.yarnpkg.com/react-devtools-core/-/react-devtools-core-3.3.4.tgz#9e497a94b73413b91774bf3e3197e539d5f9a21d"
+react-devtools-core@3.6.1:
+  version "3.6.1"
+  resolved "http://10.128.0.20:8081/repository/panorays-npm-all-dev/react-devtools-core/-/react-devtools-core-3.6.1.tgz#51af81ceada65209bbccb8b547a01187cd1cbf04"
+  integrity sha512-I/LSX+tpeTrGKaF1wXSfJ/kP+6iaP2JfshEjW8LtQBdz6c6HhzOJtjZXhqOUrAdysuey8M1/JgPY1flSVVt8Ig==
   dependencies:
     shell-quote "^1.6.1"
     ws "^3.3.1"
@@ -4342,9 +4343,9 @@ react-native-wheel-picker-android@^2.0.5:
   dependencies:
     moment "2.22.0"
 
-"react-native@https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz":
+"react-native@https://github.com/the-atelier/react-native#sdk-32":
   version "0.57.1"
-  resolved "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz#78bcdc7d34a2f4a58c179699e775842a74da6c6f"
+  resolved "https://github.com/the-atelier/react-native#4d3902d8fc0656444327912522482ce6bf3d128d"
   dependencies:
     absolute-path "^0.0.0"
     art "^0.10.0"
@@ -4385,7 +4386,7 @@ react-native-wheel-picker-android@^2.0.5:
     promise "^7.1.1"
     prop-types "^15.5.8"
     react-clone-referenced-element "^1.0.1"
-    react-devtools-core "3.3.4"
+    react-devtools-core "3.6.1"
     react-timer-mixin "^0.13.2"
     regenerator-runtime "^0.11.0"
     rimraf "^2.5.4"
@@ -4467,15 +4468,15 @@ react-tween-state@^0.1.5:
     raf "^3.1.0"
     tween-functions "^1.0.1"
 
-react@16.5.0:
-  version "16.5.0"
-  resolved "http://10.128.0.20:8081/repository/panorays-npm-all-dev/react/-/react-16.5.0.tgz#f2c1e754bf9751a549d9c6d9aca41905beb56575"
-  integrity sha512-nw/yB/L51kA9PsAy17T1JrzzGRk+BlFCJwFF7p+pwVxgqwPjYNeZEkkH7LXn9dmflolrYMXLWMTkQ77suKPTNQ==
+react@16.8.2:
+  version "16.8.2"
+  resolved "http://10.128.0.20:8081/repository/panorays-npm-all-dev/react/-/react-16.8.2.tgz#83064596feaa98d9c2857c4deae1848b542c9c0c"
+  integrity sha512-aB2ctx9uQ9vo09HVknqv3DGRpI7OIGJhCx3Bt0QqoRluEjHSaObJl+nG12GDdYH6sTgE7YiPJ6ZUyMx9kICdXw==
   dependencies:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
     prop-types "^15.6.2"
-    schedule "^0.3.0"
+    scheduler "^0.13.2"
 
 read-pkg-up@^2.0.0:
   version "2.0.0"
@@ -4736,11 +4737,12 @@ sax@~1.1.1:
   version "1.1.6"
   resolved "https://registry.yarnpkg.com/sax/-/sax-1.1.6.tgz#5d616be8a5e607d54e114afae55b7eaf2fcc3240"
 
-schedule@^0.3.0:
-  version "0.3.0"
-  resolved "http://10.128.0.20:8081/repository/panorays-npm-all-dev/schedule/-/schedule-0.3.0.tgz#1be2ab2fc2e768536269ce7326efb478d6c045e8"
-  integrity sha512-20+1KVo517sR7Nt+bYBN8a+bEJDKLPEx7Ohtts1kX05E4/HY53YUNuhfkVNItmWAnBYHcpG9vsd2/CJxG+aPCQ==
+scheduler@^0.13.2:
+  version "0.13.6"
+  resolved "http://10.128.0.20:8081/repository/panorays-npm-all-dev/scheduler/-/scheduler-0.13.6.tgz#466a4ec332467b31a91b9bf74e5347072e4cd889"
+  integrity sha512-IWnObHt413ucAYKsD9J1QShUKkbKLQQHdxRyw73sw4FN26iWr3DY/H34xGPe4nmL1DwXyWmSWmMrA9TfQbE/XQ==
   dependencies:
+    loose-envify "^1.1.0"
     object-assign "^4.1.1"
 
 schema-utils@^1.0.0:
