@@ -1,5 +1,6 @@
 import {SinglePickerMaterialDialog} from "react-native-material-dialog";
 import React from "react";
+import {whiteMode} from "../constants/color";
 
 interface Item {
     value: string;
@@ -14,6 +15,8 @@ interface SinglePickerProps {
     visible: boolean;
     onSelect: Function;
 }
+
+const {colorAccent} = whiteMode.dialog;
 
 const onOk = ({selectedItem: {value}}: any, setVisible: Function, onSelect: Function) => {
     setVisible(false);
@@ -31,6 +34,7 @@ export const SinglePicker = ({title, items, selectedItem, visible, setVisible, o
             selectedItem={selectedItem}
             onCancel={() => setVisible(false)}
             onOk={(result: any) => onOk(result, setVisible, onSelect)}
+            colorAccent={colorAccent}
         />
     )
 };

@@ -1,34 +1,43 @@
-import {connect} from "react-redux";
-import SettingComponent from './components/setting.component';
-import {compose} from 'recompose';
+import React from "react";
+import {Container, Content, ListItem, Text} from "native-base";
+import LanguageListItem from "./components/listItem/language-list-item.component";
+import UnitListItem from "./components/listItem/unit-list-item.component";
+import WeightListItem from "./components/listItem/weight-list-item.component";
 import {withNamespaces} from "react-i18next";
-import {Dispatch} from "redux";
-import {setLanguage, sexPickerVisible, languagePickerVisible} from "./store/actions";
-import {Languages} from "../../i18n/languages.enum";
-import {Sex, Unit} from "../../utils";
-import {setSex, setUnit} from "../registration/store/actions";
-import {setUnitsPickerVisible} from "./store/actions/setUnitsPickerVisible.action";
-import {setWeightPickerVisible} from "../../store/ui/actions/set-weight.action";
+import AutoCalculateListItem from "./components/listItem/auto-calculate-list-item.component";
+import DailyGoalListItem from "./components/listItem/daily-goal-list-item.component";
+import SexListItem from './components/listItem/sex-list-item.component';
 
-const mapStateToProps = (state: any) => {
-    return {
-        ...state,
+const styles = {
+    container: {
+        backgroundColor: "#FFF"
+    },
+    subHeader: {
+        color: '#1db4d6',
+        paddingLeft: 10,
+        paddingTop: 5,
+        fontSize: 20
     }
 };
 
-const mapDispatchToProps = (dispatch: Dispatch) => ({
-    setLanguages: (lng: Languages) => dispatch(setLanguage(lng)),
-    setLanguagePickerVisible: (visible: boolean) => dispatch(languagePickerVisible(visible)),
-    setSexPickerVisible: (visible: boolean) => dispatch(sexPickerVisible(visible)),
-    setSex: (sex: Sex) => dispatch(setSex(sex)),
-    setUnitsPickerVisible: (visible: boolean) => dispatch(setUnitsPickerVisible(visible)),
-    setUnit: (unit: Unit) => dispatch(setUnit(unit)),
-    setWeightPickerVisible: (visible: boolean) => dispatch(setWeightPickerVisible(visible)),
+const SettingComponent = ({i18n}: any) => {
+    return (
+        <Container style={styles.container}>
+            <Content>
+                <Text style={styles.subHeader}>{i18n.t('settings.selection_one.header')}</Text>
+                <LanguageListItem/>
+                <SexListItem />
+                <UnitListItem/>
+                <WeightListItem/>
 
-});
+                <ListItem itemDivider style={{height: 5}}/>
 
+                <Text style={styles.subHeader}>{i18n.t('settings.selection_two.header')}</Text>
+                <AutoCalculateListItem/>
+                <DailyGoalListItem/>
+            </Content>
+        </Container>
+    )
+};
 
-export default compose(
-    withNamespaces(''),
-    connect(mapStateToProps, mapDispatchToProps)
-)(SettingComponent)
+export default withNamespaces('')(SettingComponent)

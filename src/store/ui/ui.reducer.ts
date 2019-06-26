@@ -8,9 +8,18 @@ const initialState = {
     weightPickerVisible: false
 };
 
+const getRange = (rangeNum: any) => {
+    return range(rangeNum.start, rangeNum.end).map(num => num.toString());
+};
+
 export const getWeightRange = createSelector([getUnit], (unit) =>{
     const rangeNum = unit === Unit.kg_ml ?  {start: 0, end: 250} :{start: 0, end: 100};
-    return range(rangeNum.start, rangeNum.end).map(num => num.toString())
+    return getRange(rangeNum)
+});
+
+export const getDailyGoalRange = createSelector([getUnit], (unit) => {
+    const rangeNum = unit === Unit.kg_ml ?  {start: 0, end: 250} :{start: 0, end: 100};
+    return getRange(rangeNum)
 });
 
 export const getWeightPickerVisible = (state: any) => state.ui.weightPickerVisible;

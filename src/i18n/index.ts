@@ -22,7 +22,15 @@ const resources = {
                     "languages": "Languages",
                     "sex": "Sex",
                     "units": "Units",
-                    "weight": "Weight"
+                    "weight": "Weight",
+                },
+                "selection_two": {
+                    "header": "Daily Goal",
+                    "autoCalculate" : {
+                        "title":  "Calculate automatically",
+                        "subTitle" : "Enter your weight and sex"
+                    },
+                    "dailyGoal": "Daily Goal"
                 },
                 "sex": {
                     "male": "male",
@@ -43,7 +51,11 @@ const resources = {
                 },
                 "weight": {
                     "title": "Select weight"
+                },
+                "dailyGoal": {
+                    "title": "Daily Goal"
                 }
+
             }
         }
     },

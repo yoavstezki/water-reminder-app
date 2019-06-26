@@ -4,9 +4,8 @@ import {compose} from 'recompose';
 import {withNamespaces} from 'react-i18next';
 import {connect} from 'react-redux';
 import {getWeight} from '../containers/registration/store/reducers/registration-reducer';
-import {getWeightPickerVisible, getWeightRange} from '../store/ui/ui.reducer';
+import {getWeightRange} from '../store/ui/ui.reducer';
 import {setWeight} from '../containers/registration/store/actions';
-import {setWeightPickerVisible} from "../store/ui/actions/set-weight.action";
 //@ts-ignore
 import {WheelPicker} from 'react-native-wheel-picker-android';
 import {MaterialDialog} from "react-native-material-dialog";
@@ -39,10 +38,8 @@ export default compose(
     withNamespaces(''),
     connect(state => ({
         weight: getWeight(state),
-        visible: getWeightPickerVisible(state),
         weightRange: getWeightRange(state)
     }), dispatch => ({
-        setWeight: (weight: string) => dispatch(setWeight(weight)),
-        setVisible: (visible: boolean) => dispatch(setWeightPickerVisible(visible))
+        setWeight: (weight: string) => dispatch(setWeight(weight))
     }))
 )(WeightPicker);
