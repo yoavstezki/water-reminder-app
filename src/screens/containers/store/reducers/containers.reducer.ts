@@ -1,40 +1,10 @@
-import {ADD_CONTAINER} from "../../../../../constants/action-types";
-import {Unit} from "../../../../../utils";
+import { ADD_CONTAINER } from "../../../../constants/action-types";
+import containers from '../data/default-container.data';
 
-const waterContainer = {
-    name: 'Water',
-    icon: '',
-    amount: 200,
-    unit: Unit.kg_ml,
-    hydro: 100,
-};
-
-const milkContainer = {
-    name: 'Milk',
-    icon: '',
-    amount: 200,
-    unit: Unit.kg_ml,
-    hydro: 80
-};
-
-const coffeeContainer = {
-    name: 'Coffee',
-    icon: '',
-    amount: 200,
-    unit: Unit.kg_ml,
-    hydro: -50
-};
-
-const teaContainer = {
-    name: 'Tea',
-    icon: '',
-    amount: 200,
-    unit: Unit.kg_ml,
-    hydro: -50
-};
+export const getContainers = (state: any) =>  state.containersManagement.containers;
 
 const initialState = {
-    containers: [waterContainer, coffeeContainer, teaContainer, milkContainer]
+    containers
 };
 
 const containersReducer = (state = initialState, action: any) => {
@@ -50,3 +20,5 @@ const containersReducer = (state = initialState, action: any) => {
         }
     }
 };
+
+export default containersReducer;

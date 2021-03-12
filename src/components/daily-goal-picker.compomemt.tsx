@@ -1,10 +1,10 @@
-import React, {useState} from 'react';
-import {compose} from "recompose";
-import {withNamespaces} from "react-i18next";
-import {connect} from "react-redux";
-import {getDailyGoal} from "../containers/registration/store/reducers/registration-reducer";
-import {setDailyGoal} from "../containers/registration/store/actions";
-import {TextField} from "react-native-material-textfield";
+import React, { useState } from 'react';
+import { compose } from "recompose";
+import { withNamespaces } from "react-i18next";
+import { connect } from "react-redux";
+import { getDailyGoal } from "../screens/registration/store/reducers/registration-reducer";
+import { setDailyGoal } from "../screens/registration/store/actions";
+import { TextField } from "react-native-material-textfield";
 import Dialog from "./dialog.component";
 
 const DailyGoalPicker = ({dailyGoal, setVisible, visible, setDailyGoal, t}: any) => {

@@ -1,11 +1,18 @@
-import {WEIGHT_PICKER_VISIBLE} from "../../constants/action-types";
-import {Unit} from "../../utils";
-import {createSelector} from "reselect";
-import {range} from 'lodash';
-import {getUnit} from "../../containers/registration/store/reducers/registration-reducer";
+import { Unit } from "../../utils";
+import { createSelector } from "reselect";
+import { range } from 'lodash';
+import { getUnit } from "../../screens/registration/store/reducers/registration-reducer";
 
 const initialState = {
-    weightPickerVisible: false
+    images: [
+        { path: 'water-icon.png', selected: true },
+        { path: 'milk-icon.png', selected: false },
+        { path: 'coffee-icon.png', selected: false },
+        { path: 'tea-icon.png', selected: false },
+        { path: 'cola-icon.png', selected: false },
+        { path: 'orange-icon.png', selected: false },
+        { path: 'beer-icon.png', selected: false }
+    ]
 };
 
 const getRange = (rangeNum: any) => {
@@ -17,20 +24,11 @@ export const getWeightRange = createSelector([getUnit], (unit) =>{
     return getRange(rangeNum)
 });
 
-export const getDailyGoalRange = createSelector([getUnit], (unit) => {
-    const rangeNum = unit === Unit.kg_ml ?  {start: 0, end: 250} :{start: 0, end: 100};
-    return getRange(rangeNum)
-});
-
-export const getWeightPickerVisible = (state: any) => state.ui.weightPickerVisible;
+export const getImagesContainer = (state: any) => state.ui.images;
 
 export default (state = initialState, action: any) => {
 
     switch (action.type) {
-        case WEIGHT_PICKER_VISIBLE: {
-            const {weightPickerVisible} = action.payload;
-            return {...state, weightPickerVisible}
-        }
 
         default: {
             return state;

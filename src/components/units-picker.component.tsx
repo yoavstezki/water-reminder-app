@@ -1,12 +1,12 @@
 import React from 'react';
-import {withNamespaces} from "react-i18next";
-import {SinglePicker} from "./single-picker.component";
-import {Unit} from "../utils";
-import {values} from 'lodash';
-import {compose} from "recompose";
-import {connect} from "react-redux";
-import {getUnit} from "../containers/registration/store/reducers/registration-reducer";
-import {setUnit} from "../containers/registration/store/actions";
+import { withNamespaces } from "react-i18next";
+import { SinglePicker } from "./single-picker.component";
+import { Unit } from "../utils";
+import { values } from 'lodash';
+import { compose } from "recompose";
+import { connect } from "react-redux";
+import { getUnit } from "../screens/registration/store/reducers/registration-reducer";
+import { setUnit } from "../screens/registration/store/actions";
 
 const getItems = (i18n: any) => values(Unit).map(unit => ({value: unit, label: i18n.t(`settings.units.${unit}`)}));
 

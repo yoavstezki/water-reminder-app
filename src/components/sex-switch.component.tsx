@@ -1,10 +1,10 @@
-import {Icon} from "native-base";
+import { Icon } from "native-base";
 import React from "react";
-import {connect} from "react-redux";
-import {getSex} from "../containers/registration/store/reducers/registration-reducer";
-import {Sex} from "../utils";
-import {setSex} from "../containers/registration/store/actions";
-import {whiteMode} from '../constants/color';
+import { connect } from "react-redux";
+import { getSex } from "../screens/registration/store/reducers/registration-reducer";
+import { Sex } from "../utils";
+import { setSex } from "../screens/registration/store/actions";
+import { whiteMode } from '../constants/color';
 
 const {active, notActive } = whiteMode.switch;
 

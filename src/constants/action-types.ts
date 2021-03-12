@@ -10,8 +10,10 @@ export const SET_CREATED = 'SET_CREATED';
 
 // settings
 export const SET_LANGUAGE = 'SET_LANGUAGE';
-export const SET_LANGUAGE_SUCCESS = 'SET_LANGUAGE_SUCCESS';
 export const SET_AUTO_CALCULATE = 'SET_AUTO_CALCULATE';
 
 //UI
 export const WEIGHT_PICKER_VISIBLE = 'WEIGHT_PICKER_VISIBLE';
+
+//containers
+export const ADD_CONTAINER = 'ADD_CONTAINER';

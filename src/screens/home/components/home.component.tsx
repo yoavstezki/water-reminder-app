@@ -1,5 +1,5 @@
 import React from 'react';
-import {Container, Row, Text} from "native-base";
+import { Col, Container, Row, Text } from "native-base";
 import SurfaceComponent from "../../../components/surface.component";
 
 const HomeComponent = (props: any) => {
@@ -15,9 +15,26 @@ const HomeComponent = (props: any) => {
             <Row>
 
             </Row>
-                
-            <Row>
 
+            <Row>
+                <Container>
+                    <Row>
+                        <Col>
+                            <Text>1</Text>
+                        </Col>
+                        <Col>
+                            <Text>2</Text>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col>
+                            <Text>3</Text>
+                        </Col>
+                        <Col>
+                            <Text>2</Text>
+                        </Col>
+                    </Row>
+                </Container>
             </Row>
         </Container>
     );

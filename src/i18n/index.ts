@@ -1,6 +1,6 @@
 import i18next from 'i18next';
-import {reactI18nextModule} from 'react-i18next';
-import {Languages} from "./languages.enum";
+import { reactI18nextModule } from 'react-i18next';
+import { Languages } from "./languages.enum";
 
 const languageDetector = {
     type: 'languageDetector',
@@ -39,6 +39,13 @@ const resources = {
                 "units": {
                     "kg/ml": "kg/ml",
                     "lb/oz": "lb/oz"
+                }
+            },
+            "containers" : {
+                "add": {
+                    "title": "Create New Drink",
+                    "name": "Drink name",
+                    "amount": "Drink amount",
                 }
             },
             "languages": {

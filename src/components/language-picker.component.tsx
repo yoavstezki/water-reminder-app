@@ -1,11 +1,11 @@
 import React from 'react';
-import {Languages} from "../i18n/languages.enum";
-import {withNamespaces} from "react-i18next";
-import {SinglePicker} from "./single-picker.component";
-import {compose} from "recompose";
-import {connect} from "react-redux";
-import {getLang} from "../containers/settings/store/reducers/setting.reducer";
-import {setLanguage} from "../containers/settings/store/actions"
+import { Languages } from "../i18n/languages.enum";
+import { withNamespaces } from "react-i18next";
+import { SinglePicker } from "./single-picker.component";
+import { compose } from "recompose";
+import { connect } from "react-redux";
+import { getLang } from "../screens/settings/store/reducers/setting.reducer";
+import { setLanguage } from "../screens/settings/store/actions"
 
 const getItems = (i18n: any) => Object.keys(Languages).map(lang => ({value: lang, label: i18n.t(`languages.${lang}`)}));
 

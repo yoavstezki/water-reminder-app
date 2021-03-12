@@ -1,22 +1,36 @@
 import {
-    createAppContainer,
-    createBottomTabNavigator,
-    createStackNavigator,
-    createSwitchNavigator
+  createAppContainer,
+  createBottomTabNavigator,
+  createStackNavigator,
+  createSwitchNavigator
 } from 'react-navigation';
 
-import RegistrationPagesContainer from '../containers/registration/registration-pags.container'
-import HomeContainer from '../containers/home/home.container';
-import HistoryContainer from '../containers/history/history.container'
-import RootContainer from '../containers/RootContainer';
-import SettingContainer from '../containers/settings/setting.container';
+import RegistrationPagesContainer from '../screens/registration/registration-pags.container'
+import HomeContainer from '../screens/home/home.container';
+import HistoryContainer from '../screens/history/history.container'
+import RootContainer from '../screens/RootContainer';
+import SettingContainer from '../screens/settings/setting.container';
+import AddContainerComponent from '../screens/containers/create/add-container.component';
 
-const AppStack = createBottomTabNavigator(
+const BottomTabStack = createBottomTabNavigator(
     {
         Home: HomeContainer,
         Setting: SettingContainer,
         History: HistoryContainer
+    }, {
+        navigationOptions: {
+            header: null
+        }
     });
+
+const AppStack = createStackNavigator(
+    {
+        Root: BottomTabStack,
+        AddContainer: AddContainerComponent
+    },{
+        headerMode: 'none',
+    }
+);
 
 const AuthStack = createStackNavigator(
     {
