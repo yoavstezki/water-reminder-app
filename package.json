@@ -10,7 +10,7 @@
     "@expo/vector-icons": "^10.0.2",
     "expo": "^32.0.0",
     "i18next": "^15.0.9",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.21",
     "native-base": "^2.12.1",
     "react": "16.8.2",
     "react-i18next": "^9.0.10",
